@@ -2,29 +2,29 @@
 
 <h2> Introduction: </h2>
     <h3> 1.1 Purpose of Product </h3>
-        <p> Our habit tracker software will help users create and sustain healthier habits with daily reminders, 
-            positive reinforcement and intuitively recognizing when a goal has been achieved. 
-            This app seeks to be a compassionate tool that people can use to track their performance in regards to the formation 
-            of a long-term habit with smaller milestones along the way. The app will do this by allowing users to set times to 
-            accomplish the new habit, setting them up with a support chat group to help keep them motivated, provide feedback 
-            data for the user to see how they are doing, and provide positive reinforcement by giving achievement rewards 
+        <p> Our habit tracker software will help users create and sustain healthier habits with daily reminders,
+            positive reinforcement and intuitively recognizing when a goal has been achieved.
+            This app seeks to be a compassionate tool that people can use to track their performance in regards to the formation
+            of a long-term habit with smaller milestones along the way. The app will do this by allowing users to set times to
+            accomplish the new habit, setting them up with a support chat group to help keep them motivated, provide feedback
+            data for the user to see how they are doing, and provide positive reinforcement by giving achievement rewards
             for accomplishing milestones.  </p>
     <h3> 1.2 Scope of Product </h3>
-        <p> Scope of this application is based on its functionality - it will be end-to-end management of the creation 
-            of a habit by allowing users to create, track and manage their milestones. It includes features such as reminders, 
+        <p> Scope of this application is based on its functionality - it will be end-to-end management of the creation
+            of a habit by allowing users to create, track and manage their milestones. It includes features such as reminders,
             streak tracking, chat forums, and virtual rewards and graphical visualization for achievements. </p>
     <h3> 1.3 Acronyms, Abbreviations, Definitions </h3>
         <P> TBD </P>
     <h3> 1.4 References </h3>
         <p> -Dart.dev/guides for understanding the dart code used for the user interface .
             -Api.flutter.dev for understanding the connections between dart language and flutter framework for user interface.
-            - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3505409/ :: Article from NIH on habit formation and health 
+            - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3505409/ :: Article from NIH on habit formation and health
              </p>
 <h2> General Description of Product </h2>
     <h3> 2.1 Context of Product </h3>
         <p> Our software will a lifestyle application running on Android operating systems. </p>
     <h3> 2.2 Domain Model with Description </h3>
-        <p><img src="/habitDomainChart.png" alt="Domain Chart" style="width:auto; height:auto;"></p>
+        <p><img src="habitDomainChart.png" alt="Domain Chart" style="width:auto; height:auto;"></p>
     <h3> 2.3 Product Functionalities  </h3>
         <h4>1. Login - User Profiles </h4>
         <h4>2. Habit List :: </h4>
@@ -39,33 +39,33 @@
         <h4>5. Chat Forum </h4>
              <p>   Allows user to find other people to talk about shared habits and goals</p>
     <h3> 2.4 User Characteristics  </h3>
-        <p> The people we would like to attract with this app are motivated, goal oriented individuals who want to 
-            create and sustain habits for their own benefit. They are reward motivated and enjoy graphical 
+        <p> The people we would like to attract with this app are motivated, goal oriented individuals who want to
+            create and sustain habits for their own benefit. They are reward motivated and enjoy graphical
             representations of their work. We feel this app will be most beneficial for those who wish to have
             an extra layer of consistency support. </p>
     <h3> 2.5 Constraints </h3>
-        <p> The current constraints are the security measures we will need to implement in order to keep personal information 
+        <p> The current constraints are the security measures we will need to implement in order to keep personal information
             private - especially in regards to the chat forum. There are also constraints on the calendar sync due to potential
-            liability. We also have a limited database of rewards in the first version because we will be pulling images from 
+            liability. We also have a limited database of rewards in the first version because we will be pulling images from
             open-source code.  </p>
     <h3> Assumptions and Dependencies </h3>
-        <p> Our system will be depending on as much open source code as is available to help us set up our database, chat forum and UI.  
-            
-            Our largest assumption about the persons using our app is that they are motivated enough to be consistent 
-            after having 'successfully created a habit' to maintain that habit if they decide to no longer track the habit. 
-            Another assumption is based on the notion of how long or often a task must be done before it becomes a habit. 
+        <p> Our system will be depending on as much open source code as is available to help us set up our database, chat forum and UI.
+
+            Our largest assumption about the persons using our app is that they are motivated enough to be consistent
+            after having 'successfully created a habit' to maintain that habit if they decide to no longer track the habit.
+            Another assumption is based on the notion of how long or often a task must be done before it becomes a habit.
             Research shows that it is dependent on the person as well as the habit. Our app will attempt to mitigate the effects
             of these assumptions by having micro-goals or milestones set up to track an individual's consistency. Each micro-goal
-            will be in the service of building a habit through smaller accomplishments instead of only tracking 
-            a person's daily actions. 
+            will be in the service of building a habit through smaller accomplishments instead of only tracking
+            a person's daily actions.
         </p>
 <h2> Functional Requirements </h2>
     <h3> <a href="userstories.html">User Stories</a> </h3>
 
 <h2> System and Non-functional Requirements </h2>
     <h3> 4.1 External Interface Requirements (User,Hardware,Software,Communications) </h3>
-        <p> Our app will be using a mobile UI. It will be implemented using the Flutter framework and Dart programming 
-            language. The interface will run through a menu linking to different pages for each feature of the app. 
+        <p> Our app will be using a mobile UI. It will be implemented using the Flutter framework and Dart programming
+            language. The interface will run through a menu linking to different pages for each feature of the app.
             <h4>External interface requirements : </h4>
                 <p>NF.4.1.1: User </p>
                 <p>NF.4.1.2: Android mobile device</p>
@@ -74,17 +74,17 @@
                 <p>NF.4.1.5: UI APIs </p>
         </p>
     <h3>4.2 Performance Requirements </h3>
-        <p> Our app will be running on the latest Android os. Any Android mobile device running the latest 
+        <p> Our app will be running on the latest Android os. Any Android mobile device running the latest
             2 versions of the Android os will be required to run the app.
                 <h4>Performance requirements: </h4>
                     <p>NF.4.2.1: Most recent Android os</p>
         </p>
     <h3> 4.3 Design Constraints </h3>
-        <p> Packages contained by the Flutter framework and Dart language will dictate what we can do 
-            visually with the design of the app. In addition for any trophy/achievement system implemented 
-            we will be relying on free databases for the trophies or rewards in the app. 
+        <p> Packages contained by the Flutter framework and Dart language will dictate what we can do
+            visually with the design of the app. In addition for any trophy/achievement system implemented
+            we will be relying on free databases for the trophies or rewards in the app.
         </p>
     <h3> 4.4 Quality Requirements </h3>
-        <p> This app is not life-critical. Users should expect this app to run quickly and smoothly. 
-            This app will be easy for people to access, update or delete habits and check achievements/progress. 
+        <p> This app is not life-critical. Users should expect this app to run quickly and smoothly.
+            This app will be easy for people to access, update or delete habits and check achievements/progress.
             Users shouldn't have to use the app for more than a few minutes a day, just to update their progress. </p>
