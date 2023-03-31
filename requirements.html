@@ -1,1 +1,104 @@
 <h1> Requirements </h1>
+
+<h2> Introduction: </h2>
+    <h3> 1.1 Purpose of Product </h3>
+        <p> &emsp; Our habit tracker software will help users create and sustain healthier habits with daily reminders,<br>
+            &emsp; positive reinforcement and intuitively recognizing when a goal has been achieved.<br>
+            &emsp; This app seeks to be a compassionate tool that people can use to track their performance in regards to the formation<br>
+            &emsp; of a long-term habit with smaller milestones along the way. The app will do this by allowing users to set times to<br>
+            &emsp; accomplish the new habit, setting them up with a support chat group to help keep them motivated, provide feedback<br>
+            &emsp; data for the user to see how they are doing, and provide positive reinforcement by giving achievement rewards<br>
+            &emsp; for accomplishing milestones.  </p>
+    <h3> 1.2 Scope of Product </h3>
+        <p> &emsp; Scope of this application is based on its functionality - it will be end-to-end management of the creation<br>
+            &emsp; of a habit by allowing users to create, track and manage their milestones. It includes features such as reminders,<br>
+            &emsp; streak tracking, chat forums, and virtual rewards and graphical visualization for achievements. It will be built<br>
+            &emsp; for individual use. </p>
+    <h3> 1.3 Acronyms, Abbreviations, Definitions </h3>
+        <P> &emsp;TBD </P>
+    <h3> 1.4 References </h3>
+        <p> &emsp; -Dart.dev/guides for understanding the dart code used for the user interface .<br>
+            &emsp; -Api.flutter.dev for understanding the connections between dart language and flutter framework for user interface.<br>
+            &emsp; - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3505409/ :: Article from NIH on habit formation and health<br>
+             </p>
+<h2> General Description of Product </h2>
+    <h3> 2.1 Context of Product </h3>
+        <p> &emsp; Our software will a lifestyle application running on Android operating systems. </p>
+    <h3> 2.2 Domain Model with Description </h3>
+        <p><img src = "habitDomainChart.png" alt = "Domain Chart" style = "width:auto; height:auto;"></p>
+        <p> &emsp; As shown above, we have several concepts we will need to model. First, the users and how they will interact <br>
+            &emsp; with their habits. Users can create habits, do tasks related to habit, and delete habits. Streak counts of <br>
+            &emsp; habitsare kept and will inform how well user is keeping up with their habits and what achievements they <br>
+            &emsp; receive into their account. Graphs and progress data is shown to user about each habit. Users can chat with <br>
+            &emsp; one another about habits. </p>
+    <h3> 2.3 Product Functionalities  </h3>
+        <h4>&emsp; 1. Login - Registration - User Profiles </h4>
+            <p>    &emsp; &emsp; Ability to login if already registered </p>
+            <p>    &emsp; &emsp; Ability to register new user </p>
+            <p>    &emsp; &emsp; Ability to change password </p>
+            <p>    &emsp; &emsp; Ability to delete account </p>
+
+        <h4>&emsp; 2. Habit List :: </h4>
+            <p>    &emsp; &emsp; Ability to look at current habits</p>
+            <p>    &emsp; &emsp; Confirm task completed box </p>
+            <p>    &emsp; &emsp; Ability to add / delete habits</p>
+            <p>    &emsp; &emsp; Ability to set milestones for habit </p>
+        <h4>&emsp; 3. Achievement Page ::</h4>
+            <p>    &emsp; &emsp; Awards for each milestone achievement</p>
+            <p>    &emsp; &emsp; Graphical representation of task completion </p>
+        <h4>&emsp; 4. Calendar // Planner ::</h4>
+            <p>    &emsp; &emsp; Allows user to plan when task will be completed for day / weeks</p>
+        <h4>&emsp; 5. Chat Forum </h4>
+             <p>   &emsp; &emsp; Allows user to find other people to talk about shared habits and goals</p>
+    <h3> 2.4 User Characteristics  </h3>
+        <p> &emsp; The people we would like to attract with this app are motivated, goal oriented individuals who want to<br>
+            &emsp; create and sustain habits for their own benefit. They are reward motivated and enjoy graphical<br>
+            &emsp; representations of their work. We feel this app will be most beneficial for those who wish to have<br>
+            &emsp; an extra layer of consistency support. </p>
+    <h3> 2.5 Constraints </h3>
+        <p> &emsp; The current constraints are the security measures we will need to implement in order to keep personal information<br>
+            &emsp; private - especially in regards to the chat forum. There are also constraints on the calendar sync due to potential<br>
+            &emsp; liability. We also have a limited database of rewards in the first version because we will be pulling images from<br>
+            &emsp; open-source code.  </p>
+    <h3> Assumptions and Dependencies </h3>
+        <p> &emsp; Our system will be depending on as much open source code as is available to help us set up our database, chat <br>
+            &emsp; forum and UI.<br>
+            <br>
+            &emsp; Our largest assumption about the persons using our app is that they are motivated enough to be consistent<br>
+            &emsp; after having 'successfully created a habit' to maintain that habit if they decide to no longer track the habit.<br>
+            &emsp; Another assumption is based on the notion of how long or often a task must be done before it becomes a habit.<br>
+            &emsp; Research shows that it is dependent on the person as well as the habit. Our app will attempt to mitigate the effects<br>
+            &emsp; of these assumptions by having micro-goals or milestones set up to track an individual's consistency. Each micro-goal<br>
+            &emsp; will be in the service of building a habit through smaller accomplishments instead of only tracking<br>
+            &emsp; a person's daily actions.<br>
+        </p>
+<h2> Functional Requirements </h2>
+    <h3> <a href="userstories.html">User Stories</a> </h3>
+
+<h2> System and Non-functional Requirements </h2>
+    <h3> 4.1 External Interface Requirements (User,Hardware,Software,Communications) </h3>
+        <p> &emsp; Our app will be using a mobile UI. It will be implemented using the Flutter framework and Dart programming<br>
+            &emsp; language. The interface will run through a menu linking to different pages for each feature of the app.<br>
+            <h4>&emsp; &emsp; External interface requirements : </h4>
+                <p>&emsp; &emsp; &emsp; NF.4.1.1: User </p>
+                <p>&emsp; &emsp; &emsp; NF.4.1.2: Android mobile device</p>
+                <p>&emsp; &emsp; &emsp; NF.4.1.3: Flutter framework</p>
+                <p>&emsp; &emsp; &emsp; NF.4.1.4: Dart </p>
+                <p>&emsp; &emsp; &emsp; NF.4.1.5: UI APIs </p>
+                <p>&emsp; &emsp; &emsp; NF.4.1.6: SqLite </p>
+        </p>
+    <h3>4.2 Performance Requirements </h3>
+        <p> &emsp; Our app will be running on the latest Android os. Any Android mobile device running the latest<br>
+            &emsp; 2 versions of the Android os will be required to run the app.<br>
+                <h4>Performance requirements: </h4>
+                    <p>&emsp; NF.4.2.1: Most recent Android os</p>
+        </p>
+    <h3> 4.3 Design Constraints </h3>
+        <p> &emsp; Packages contained by the Flutter framework and Dart language will dictate what we can do<br>
+            &emsp; visually with the design of the app. In addition for any trophy/achievement system implemented<br>
+            &emsp; we will be relying on free databases for the trophies or rewards in the app.<br>
+        </p>
+    <h3> 4.4 Quality Requirements </h3>
+        <p> &emsp; This app is not life-critical. Users should expect this app to run quickly and smoothly.<br>
+            &emsp;  This app will be easy for people to access, update or delete habits and check achievements/progress.<br>
+            &emsp;  Users shouldn't have to use the app for more than a few minutes a day, just to update their progress. </p>
