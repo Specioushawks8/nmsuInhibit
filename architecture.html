@@ -1,1 +1,11 @@
 <h1> Architecture</h1>
+<h2> Repository Architecture </h2>
+<h3> Architecture Diagram </h3>
+<p><img src = "ArchitectureDiagram.png" alt = "Architecture Diagram" style = "width:auto; height:auto;"></p>
+<p> &emsp; As shown above, our database is the repository and all triggering events such as <br>
+    &emsp; creation, deletion or editing of either user or habit will result in a change in the <br>
+    &emsp; repository. All of the components that surround the repository work to maintain or change <br>
+    &emsp; it in some way. The architecture is more stateful and reliant on knowledge sources than a <br>
+    &emsp; traditional database. Each function returns an attribute's state, which is then stored in <br>
+    &emsp; database. <br>
+</p>
