@@ -1,11 +1,15 @@
 <h1> Architecture</h1>
 <h2> Repository Architecture </h2>
 <h3> Architecture Diagram </h3>
-<p><img src = "ArchitectureDiagram.png" alt = "Architecture Diagram" style = "width:auto; height:auto;"></p>
-<p> &emsp; As shown above, our database is the repository and all triggering events such as <br>
-    &emsp; creation, deletion or editing of either user or habit will result in a change in the <br>
-    &emsp; repository. All of the components that surround the repository work to maintain or change <br>
-    &emsp; it in some way. The architecture is more stateful and reliant on knowledge sources than a <br>
-    &emsp; traditional database. Each function returns an attribute's state, which is then stored in <br>
-    &emsp; database. <br>
+<p><img src = "ArchitecturalDiagram.png" alt = "Architecture Diagram" style = "width:auto; height:auto;"></p>
+<p> &emsp; As shown above, our database is the repository. It contains four tables - user, habit, milestone and awards - <br>
+    &emsp; within it that all interact with one another. Triggering events such as creation, deletion, editing of <br>
+    &emsp; will update the repository in one of the four tables. All of the components underneath the repository <br>
+    &emsp; work to maintain or change it in some way. The architecture is more stateful and reliant on knowledge <br>
+    &emsp; sources than a traditional repository architecture. Each function returns an attribute's state, which <br>
+    &emsp; updates all other components that needs the information via the repository being updated. All of the <br>
+    &emsp; changes made to the repository via functions in the UI will also update and change the app's UI via <br>
+    &emsp; the awards a user receives for completing milestones or graphs showing their progress. <br>
+
+
 </p>
