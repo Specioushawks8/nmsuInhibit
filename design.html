@@ -1,11 +1,55 @@
     <h1> Design Document</h1>
 
-    <!-- insert arcetecture image here :D-->
+    <p>
+        &emsp;The Cultivate app uses several design patterns to allow objects to interact with one another and the database. <br>
+        We are using a repository architecture for the entire app, where our repository is the central database that holds <br>
+        information about our core objects - users, habits, and milestones. The design patterns we are mainly relying on are <br>
+        the mediator, flyweight and builder patterns.<br><br>
+        &emsp;Behaviorally we use the mediator pattern in order to disseminate information to objects and update the app state. <br>
+        The central database is our mediator. It disseminates information about objects to their colleagues. For example,<br>
+        the user can be created in the registration page and can login once the database has their information. Registration <br>
+        page and login page objects do not communicate with one another. Another example is how the user and habit objects<br>
+        interact with one another. In the habitTile object, we are able to access the user’s information through a userProvider<br>
+         object that gets information about the current user from the database. Once that user information is updated to habitTile, <br>
+         a habit can be created that belongs to the current user. If a user doesn’t exist, then a habit cannot exist for them.<br><br>
+         &emsp;Structurally, we are mainly implementing the flyweight pattern. This gives us flexibility and support in sharing a<br>
+        variety of objects with one another efficiently. For example, we are using a Flutter library to implement our charts <br>
+        page, but the information that is needed to display the chart is coming from inputs from our habitTile object and <br>
+        the user as they interact with the UI. The ability to share information across the app quickly and efficiently <br>
+        is essential.<br><br>
+        &emsp;Most of our objects are builder objects - like habitTile, homepage,and chartsBuilder as they are mostly there to <br>
+        build the UI page and have functionality that affect other objects. The user, habit and milestone are factory models. <br>
+        We also have one singleton class - the main object, which runs our entire app and is the entry point to start the app.<br><br>
+    </p>
 
 
 
-     <!-- insert Discription here :D-->
-     
-    <p>Discription here :D </p>
-    <!-- Insert Control issues here -->
-    <p>Control Issues: </p> 
+!!!!!!!!! NSERT THE UML CLASS DIAGRAM HERE !!!!!!!!
+
+
+
+    <p>
+        &emsp;In our UML class diagram you can see that the databaseHelper is the central component. This object helps us access <br>
+        and store information about the habit, milestone, and user. It also allows us to link the user to their habits and <br>
+        each habit to its milestone. Habits cannot exist without a user. Milestones cannot exist without a habit. Like<br>
+        we mentioned above, we are heavily leaning on the repository architectural model. All other objects are dependent <br>
+        on it and have a relationship to the databaseHelper object - even if only by proxy through another object.<br><br>
+        &emsp;Aside from the databaseHelper; habit, milestone and user objects are the objects we have built the app around.<br>
+        All three of those objects have properties that uniquely identify them from one another and instances of themselves<br>
+        They do not interact with one another directly, but through auxiliary objects such as the habitTile. They have a <br>
+        composite relationship in that there must be one user for there to be a habit created. A user can have multiple <br>
+        habits. There must be one habit in order for there to be any milestones. For each habit, a user can choose up <br>
+        to five milestones. Without the parent node (user), neither habit nor milestone can exist. All three of these objects<br>
+        inform the database through the databaseHelper.
+        &emsp;The homepage object is the next ‘largest’ object in that it holds the habitTile object. The habitTile object is <br>
+        where habits are created, edited and linked to the user. It has the ability to show the user the streaks for each <br>
+        habit and is where they will interact with the application the most. It communicates directly to the databaseHelper <br>
+        object in order to get the user information and relay it to habitTile.<br><br>
+        &emsp;The chartsBuilder object is a graphical image of how many times a user has completed a task. It depends on the <br>
+        databaseHelper for the correct information in order to output an accurate donut chart.<br><br>
+        &emsp;The registration and login objects both interact with the databaseHelper object. The registration object <br>
+        will allow a new user to register for an account and store their information into the local database via the <br>
+        databaseHelper. The login object verifies user information by accessing the database via the databaseHelper.<br><br>
+        </p>
+
+    <p>Control Issues: </p>
