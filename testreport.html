@@ -1,1 +1,131 @@
 <h1> Test Report </h1>
+<h2> Component Testing </h2>
+    <h3> Database</h3>
+    <p>
+        &emsp;&emsp;When we implemented the habit and user tables in our main database, we had to test how they were created, <br>
+        &emsp;edited, used and linked to one another. For the user, we tested creating multiple people with the same <br>
+        &emsp; username, incorrect login credentials, and invalid username and password options. Multiple users were linked <br>
+        &emsp;to their own habits. We made sure that habits were created within a user’s account and could be edited separately. The <br>
+        &emsp;information we stored in the main database was tested for persistence in the local data of a user’s device. <br>
+        &emsp;To see all of our changes - we gave each habit and user had unique ids that identified and linked them <br>
+        &emsp;to one another. We were able to see in real time the changes we made in the database through the command line. <br>
+        &emsp;In testing the database, we were able to test the key functions that are a part of the login and registration <br>
+        &emsp;pages of our app.<br> <br>
+    </p>
+    <h3> Notifications </h3>
+    <p>
+        &emsp;&emsp;To test notifications, we first tested whether or not a notification button would show up on our app. Then <br>
+        &emsp;we scheduled notifications - some to occur once, at a specific time on a specific day, and others to occur <br>
+        &emsp;epeatedly at a specific time each day. We made sure to test if we had a notification set for midnight, the <br>
+        &emsp;notification would occur on the correct day. Another test we ran on this module was if the notification data <br>
+        &emsp;was persistent & would sustain changes if a user decided to change the schedule. We also made sure that if <br>
+        &emsp;the app was not currently open on the phone, we would still get notifications. <br><br>
+    </p>
+    <h3> HomePage / HabitList </h3>
+    <p>
+        &emsp;&emsp;Initially we did not have the database running, therefore to test the creation of a list of tiles for each <br>
+        &emsp;habit, we created a local list with pre-made habits and their individual characteristics. We then gave the <br>
+        &emsp;homepage access to the list and for each habit in the list a tile was printed to the screen with the name <br>
+        &emsp;of the habit printed on the tile. The next step was to add more functionality to the tile. We wanted the user <br>
+        &emsp;to be able to click a checkbox and be set as done or not done. This required us to change the state of a tile <br>
+        &emsp;to change from done to not done or vice versa. Once the checkbox state changing was working, we were able to <br>
+        &emsp;start incrementing and decrementing the streak count for each habit depending on the tiles done or not done <br>
+        &emsp;state. At this early point the basics of the Habit List/tile creation was done.<br>
+
+        &emsp;&emsp;When we got the database up and running with a table that could hold the habits for an individual user, <br>
+        &emsp;and those habits characteristics, we had to change how the system accessed those habits, and created a list <br>
+        &emsp;from them.We first tested whether we could access the habits in the table, to do this we had to make sure <br>
+        &emsp;we could add habits into the table. After adding habits to the database, we needed to initialize the database <br>
+        &emsp;in the homepage so that the habits in the table could be accessed. Then for each habit in the database that is <br>
+        &emsp;linked to the user that is logged in, the homepage prints a tile.<br><br>
+    </p>
+    <h3> HabitTiles </h3>
+    <p>
+        &emsp;&emsp;Initially the habit tile was very basic, it was just a box with the name of a habit printed in it. <br>
+        &emsp;When we could get the box printed to the screen using the initial list of habits, we started working on adding <br>
+        &emsp;a checkbox function to it to set a value for done or not done.<br>
+        &emsp;&emsp;Once the app was using the database to save and access habits, we started adding more functionality <br>
+        &emsp;to the tile. Since we created a specific table for habits with individual characteristics and those values <br>
+        &emsp;would be saved and accessible, we created an overlay that would come up when a tile is clicked. At this point <br>
+        &emsp;we just tested to see if the overlay could be seen on screen, we then added a text box to the overlay to edit <br>
+        &emsp;the name of a habit. To test this, we tested if we could write in the newly created textbox and then we checked <br>
+        &emsp;the database to see if the name of the habit would change in the db. Next we added drop down boxes for <br>
+        &emsp;milestones for users to decide at what point they get an award. We then tested whether the numbers chosen <br>
+        &emsp;would be saved. At this point they are only saved locally in the overlay, but because our milestone table <br>
+        &emsp;is not fully functional the data is not persistent yet.<br><br>
+    </p>
+    <h3> Navigation </h3>
+    <p>
+        &emsp;&emsp;For navigation, there are two different ways that the app handles navigation. There is navigation that <br>
+        &emsp;is handled based on the states of certain pages like the loginpage, and then there is navigation using the <br>
+        &emsp;navigation bar. To test the navigation done through the loginpage, we had to make sure that we could login <br>
+        &emsp;successfully, if a user logged in successfully then the system would open the homepage. If a user has not <br>
+        &emsp;been entered into the database yet, then can click a button on the loginpage that sends them to the registration <br>
+        &emsp;page. These pages are only accessed internally upon opening the app. After making sure users could be added <br>
+        &emsp;to the database, then we tested whether the login page would come up on opening the app and that it would <br>
+        &emsp;send us to the correct page if the login was successful. Next we had to test that once the homepage opened <br>
+        &emsp;after logging in, there would be a navigation bar, where you could click a button which would access the <br>
+        &emsp;page linked via an index to jump to a different page. We then tested whether those buttons sent us to the <br>
+        &emsp;correct pages.<br><br>
+    </p>
+
+
+<h2> System Testing </h2>
+    <p>
+        &emsp;Throughout our development, we were forced to do system testing of each component as they were built. We used<br>
+        &emsp;this strategy in order to keep a coherence to the UI as well as to make sure our functionalities were behaving<br>
+        &emsp;appropriately.To test how our app was running, it had to frequently be rebuilt via a prebuilt build.gradle which <br>
+        &emsp;which is an automation tool for handling tasks, building the app, and running tests which would tell us whether <br>
+        &emsp;there were any breakpoints in our code. It was critical that when the database was built and functioning, every<br>
+        &emsp;other component drew information from it and sent back accurate information to it. Each time a page or<br>
+        &emsp;major functionality was added to a component, we would clear the database and rerun the app as a new user.  <br>
+        &emsp;We also made sure to implement error messages for the user to show when there is invalid input. <br>
+        &emsp;This allowed us to build on the UI/UX of the app as it was being built and find any functionality <br>
+        &emsp;errors in our code.<br><br>
+    </p>
+
+
+<h2> Acceptance Testing </h2>
+    <p>
+        &emsp; To perform acceptance testing, we had to look back at our user stories and from that find the criteria for <br>
+        &emsp; the acceptance testing:
+    </p>
+    <h3> User Registration: </h3>
+    <p> &emsp;The user would want to register for an account so that they are able to add and track their habits. <br> <br>
+        &emsp;Acceptance criteria:<br>
+        &emsp;&emsp;Users should be able to enter their email, username, and password in order to create a new account. <br>
+        &emsp;&emsp; After registration, the user should be able to log in using the details they entered (stored in a <br>
+        &emsp;&emsp;database)<br><br>
+    </p>
+    <h3> Addition of Habits </h3>
+    <p> &emsp;A user would like to be able to add an activity once they are logged in to their account so that they can <br>
+        &emsp;manage it.<br><br>
+        &emsp;Acceptance criteria:<br>
+        &emsp;&emsp;The user should be able to enter the name of the activity they are trying to add, and the frequency <br>
+        &emsp;&emsp;of tracking(i.e. Daily, weekly).<br>
+        &emsp;&emsp;After the habit has been added, the user should be able to see the activity on their account’s dashboard.<br><br>
+        </p>
+    <h3> Tracking a Habit</h3>
+    <p>
+        &emsp;Once the habit has been added, the user would like to be able to track the progress of the activity so they <br>
+        &emsp;can see progress over time<br><br>
+        &emsp;Acceptance criteria:<br>
+        &emsp;&emsp;The user should be able to click on the activity on the dashboard, and this should show them the <br>
+        &emsp;&emsp;progress chart for that activity, (streak of each activity- how many times the activity has been completed<br>
+        &emsp;&emsp; over a given period of time).<br><br>
+    </p>
+    <h3> User Interface </h3>
+    <p>
+        &emsp;A user wants the app to be easy to use (navigating through the app’s features) and visually appealing.<br><br>
+        &emsp;Acceptance criteria:<br>
+        &emsp;&emsp;The app should have clear labels for buttons and menu, consistency in the typography and color <br>
+        &emsp;&emsp;schemes with a layout that is easy to navigate. The user should be able to perform any task within <br>
+        &emsp;&emsp;the app quickly and easily without encountering any confusion or  frustrating elements.<br><br>
+    </p>
+    <h3> Reminders </h3>
+    <p>
+        &emsp;The user wanted to easily be able to set notifications to be reminded to perform each task. <br><br>
+        &emsp;Acceptance criteria:<br>
+        &emsp;&emsp;The app has the ability to set notifications and for them to either be repeated, or one time. <br>
+        &emsp;&emsp;The user has the ability to manually set notifications or accept the default notification time.<br>
+    </p>
