@@ -3,7 +3,7 @@
     <p>
         &emsp;The Cultivate app uses several design patterns to allow objects to interact with one another and the database. <br>
         We are using a repository architecture for the entire app, where our repository is the central database that holds <br>
-        information about our core objects - users, habits, and milestones. The design patterns we are mainly relying on are <br>
+        information about our core objects - users, habits, and milestones. The design patterns we rely on are <br>
         the mediator, flyweight and builder patterns.<br><br>
         &emsp;Behaviorally we use the mediator pattern in order to disseminate information to objects and update the app state. <br>
         The central database is our mediator. It disseminates information about objects to their colleagues. For example,<br>
